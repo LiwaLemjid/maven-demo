@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout SCM') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '51be28a6-b653-4e90-b62e-8e3299f6ee35', url: 'https://github.com/LiwaLemjid/maven-demo']]])
+            }
+        }
+    
         stage('Build') {
             steps {
                 echo 'Building..'
