@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    maven 'Maven 3.6.2'
 
     stages {
         stage('Checkout SCM') {
@@ -12,6 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh label: '', script: 'mvn install'
             }
         }
         stage('Test') {
