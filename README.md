@@ -1,3 +1,3 @@
 # maven-demo
  
-testing 1.1
+testing 1.2
